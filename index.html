@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>MDA</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MDA" />
+    <meta property="og:description" />
+    <meta property="og:image" content="/oss/253176865488897/ios/1685799136696.png" />
+    <meta property="ua" content="sitesucker for macos/5.0.3">
+    <meta property="platform" content="pc">
+    <meta property="x-tpplatform" content="ios">
+    <meta property="lang" content="1">
+    <meta property="langName" content="zh">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="js/vipsignPage.css">
+    <link rel="stylesheet" href="js/swiper.css">
+    <link rel="stylesheet" href="js/animate.css">
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/swiper-3.4.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-qrcode.min.js"></script>
+    <script type="text/javascript" src="js/swiper.animate.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="js/installSign.js"></script>
+    <script type="text/javascript" src="js/clipboard.min.js"></script>
+    <!--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RMD4NVNGGN"></script>-->
+    <!--    <script>-->
+    <!--        window.dataLayer = window.dataLayer || [];-->
+    <!--        function gtag(){dataLayer.push(arguments);}-->
+    <!--        gtag('js', new Date());-->
+    <!--        gtag('config', 'G-RMD4NVNGGN');-->
+    <!--    </script>-->
+    <style>
+        .rate-line-between {
+            width: 1px;
+            background-color: rgb(231 231 231);
+            height: 48px;
+            margin: 8px 8px 0 8px;
+        }
+
+        .animate {
+            background-color: #3478f6;
+        }
+
+        #ios-installing {
+            width: 76px;
+            padding: 0;
+        }
+
+        #iosdownbtn {
+            width: 76px;
+            height: 24px;
+            line-height: 24px;
+            border-radius: 30px 0 0 30px;
+        }
+
+        #xzzz {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            width: 76px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        #tips {
+            margin-top: 35px;
+            font-size: 12px;
+            color: #ababae;
+            margin-left: 5px;
+        }
+
+        #tips code {
+            color: red;
+            margin-left: 0.2rem;
+            margin-right: 0.2rem;
+        }
+
+        .mask,
+        .mask2,
+        .mask3,
+        .mask4 {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            display: none;
+        }
+
+        .mask5 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            background: rgba(2, 2, 2, 0.6);
+            z-index: 1000000;
+            top: 0;
+        }
+
+        .mdmCode {
+            width: 90%;
+            height: 29.0rem;
+            background-color: white;
+            border-radius: 0.3rem;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+
+        .mdmCode h3 {
+            margin-top: 1rem;
+            font-weight: bold;
+            font-size: 2.0rem;
+        }
+
+        .mdmCode p {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: #666666;
+            padding: 0 1.5rem;
+        }
+
+        #mdm-tip p code {
+            color: red;
+            font-weight: 600;
+        }
+
+        .mdmMaskCodeOk {
+            width: 70%;
+            height: 3.0rem;
+            border-radius: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: #0078fc;
+            margin-top: 2.5rem;
+            font-size: 2.4rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        #captcha-box {
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            /*padding-top: 70%;*/
+            display: none;
+        }
+
+        .show-qr {
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: none;
+        }
+
+        .show-qr-content {
+            align-items: center;
+            justify-content: center;
+            padding-top: 50px;
+        }
+    </style>
+    <script src="https://cstaticdun.126.net/load.min.js?t=201903281201"></script>
+</head>
+
+<body>
+    <div>
+        <section class="l-content-width section section-hero">
+            <div style="display: inline-block;width: 31vw;vertical-align: top;">
+                <div id="appdetails-icon" class="appdetails-icon small-5" style="width: 100%;">
+                    <div class="ios-app-icon">
+                        <img class="ios-app-icon-img" src="img/logo.png"
+                            style="background-color: #fefefe;" alt="">
+                    </div>
+                </div>
+            </div>
+            <div style="display: inline-block;width: 52vw;vertical-align: top;margin-left: 8px;">
+                <div>
+                    <div class="ios-app-brief">
+                        <header class="ios-app-brief-header">
+                            <h1 class="ios-app-title"
+                                style="font-size: 20px;width: 50vw;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-family:PingFangSC-Medium;margin-bottom: 8px;">
+                                <span
+                                    style="word-break: normal; width:auto; display:block;white-space:pre-wrap; word-wrap : break-word; overflow: hidden;">MDA</span>
+                                <span class="ios-app-title-cls" style="display: none;">4+</span>
+                            </h1>
+                            <h2 class="ios-app-vendor"><a href="javascript:;" style="color:rgba(132,132,137,1);"> </a>
+                            </h2>
+                        </header>
+                    </div>
+                </div>
+                <div>
+                    <div style="position: absolute;width: 60%;">
+                        <ul class="ios-app-recom" style="width:100%;">
+
+                            <div id="installText" style="display:none;margin-top:-20px;">
+                            </div>
+                            <li id="install-btn-container" onclick="onDownloadClick()" class="install-btn-container0"
+                                style="display: inline-block;">
+                                <div id="ios-installing"
+                                    style="overflow: hidden; background: rgb(204, 204, 204); border-color: unset; box-shadow: unset;">
+                                    <div class="download-loading-text animate" id="iosdownbtn">
+                                    </div>
+                                    <span id="xzzz">安装</span>
+                                    <div class="download-loading-line" style="width: 0%;"></div>
+                                </div>
+                            </li>
+
+                            <a href="./embedded.mobileprovision">去信任</a>
+                        </ul>
+                    </div>
+                </div>
+                <p id="tips">
+                    APP下载完成后，苹果手机用户需要进行以下设置即可使用<br />1：在苹果手机的<code>“设置”</code>里找到“通用”打开<br />2：在<code>“通用”</code>里找到“设备管理”打开<br />3：在<code>“设备管理”</code>里找到对应的APP点击信任后即可使用<br />
+                </p>
+            </div>
+        </section>
+
+        <section class="l-content-width"
+            style="border-top: 1px solid #eee;border-bottom: 1px solid #eee; padding-top: 0px;padding-bottom: 16px; display: flex; align-items: center;">
+            <div class="ios-app-rating" style="width:30%; font-size: 12px;">
+                <h5 class="ios-caption-subtitle"
+                    style="color: #ababae; font-size: 12px; text-align: center; margin-top: 14px;">
+                    <span>254</span>
+
+                    <span>评分</span>
+                </h5>
+                <p style="font-size: 16px; text-align: center; font-weight: bold; color: #ababae; margin: 4px 0;">4.9
+                </p>
+
+                <div class="ios-app-rating-caption-big plxing" style="width: 100%;">
+                    <p style="display: flex; align-items: center; justify-content: center;    width: 100%;">
+                        <img style="width: 70%;" src="img/stars.png">
+                    </p>
+                </div>
+            </div>
+            <div class="rate-line-between">
+
+            </div>
+            <div class="ios-app-rating" style="width:24%; text-align: center; margin-top: 14px;">
+                <div style="font-size: 12px;color: #ababae;">年龄</div>
+                <h5 style="color: #ababae; font-weight: bold; margin: 4px 0;">4+</h5>
+
+                <h5 style="color: #ababae; font-size: 12px">岁</h5>
+            </div>
+            <div class="rate-line-between">
+
+            </div>
+            <div class="ios-app-rating" style="width:24%; text-align: center; margin-top: 14px;">
+                <div style="font-size: 12px;color: #ababae;">排行榜</div>
+                <h5 style="color: #ababae; font-weight: bold; margin: 4px 0;">#1+</h5>
+                <h5 style="color: #ababae; font-size: 12px">应用</h5>
+            </div>
+            <div class="rate-line-between">
+
+            </div>
+            <div class="ios-app-rating" style="width:24%; text-align: center; margin-top: 14px;">
+                <div style="font-size: 12px;color: #ababae;">大小</div>
+                <h5 style="color: #ababae; font-weight: bold; margin: 4px 0;">68.1MB</h5>
+                <h5 style="color: #ababae; font-size: 12px">&nbsp;</h5>
+            </div>
+        </section>
+
+        <!--    <section class="l-content-width">-->
+        <!--        <div class="ios-app-rating" style="width:45%">-->
+        <!--            <div class="ios-app-rating-caption-big plxing">-->
+        <!--                <span th:if="${#strings.isEmpty(app.score)}">4.9</span>-->
+        <!--                <span th:unless="${#strings.isEmpty(app.score)}" th:text="${app.score}">254</span>-->
+        <!--                <p><img src="img/xxing.png">-->
+        <!--                    <img src="img/xxing.png">-->
+        <!--                    <img src="img/xxing.png">-->
+        <!--                    <img src="img/xxing.png">-->
+        <!--                    <img src="img/xing2.png"></p>-->
+        <!--            </div>-->
+        <!--            <h5 class="ios-caption-subtitle" style="color: #ababae;">-->
+        <!--                <span th:if="${#strings.isEmpty(app.scoreCount)}">254</span>-->
+        <!--                <span th:unless="${#strings.isEmpty(app.scoreCount)}" th:text="${app.scoreCount}">254</span>-->
+        <!--                <span th:text="#{messages.app.score}">个评分</span>-->
+        <!--            </h5>-->
+        <!--        </div>-->
+        <!--        <div class="ios-app-rating" style="width:25%; text-align: center;">-->
+        <!--            <div class="ios-app-rating-caption-big">-->
+        <!--                <font style="vertical-align: middle;font-size: 14px;font-weight: 600;">#</font>1-->
+        <!--            </div>-->
+        <!--            <h5 class="ios-caption-subtitle" style="color: #ababae;" th:text="#{messages.app.fast_application}">快应用</h5>-->
+        <!--        </div>-->
+        <!--        <div class="ios-app-rating" style="width:25%; text-align: right;">-->
+        <!--            <div class="ios-app-rating-caption-big">-->
+        <!--                <span th:if="${#strings.isEmpty(app.age)}">4+</span>-->
+        <!--                <span th:unless="${#strings.isEmpty(app.age)}" th:text="${app.age}">4+</span>-->
+        <!--            </div>-->
+        <!--            <h5 class="ios-caption-subtitle" style="color: #ababae;" th:text="#{messages.app.age}">年龄</h5>-->
+        <!--        </div>-->
+        <!--    </section>-->
+
+        <section class="l-content-width section w-100">
+            <div class="banner">
+                <div class="swiper-container-my swiper-container-initialized swiper-container-horizontal">
+                    <div class="swiper-wrapper" style="">
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="l-content-width section section-bordered">
+            <div class="ellipsis">
+                <div class="ellipsis-container">
+                    <div class="ellipsis-content f-game-content" style="color: #2e2e2e;font-size: 14.3px;">
+                        <div>
+
+                            <p>【<span>MDA</span>】 <span>官方推荐App</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="expand" class="ellipsis-ghost expand">
+                        <div class="ellipsis-more"
+                            style="background-image: linear-gradient(to right , #ffffff00, #ffffffff 40%);">更多</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="l-content-width section section-bordered" style="padding-bottom:0;padding-top: 14px;">
+            <h2 class="section-headline" style="font-size:22px;color:#000;margin-bottom: 10px;">评分及评论</h2>
+            <div class="ios-app-cust-ratings" style="margin-bottom:0;">
+                <div class="ios-app-cust-ratings_stats">
+                    <h3 class="ios-app-ratings_avg">
+                        <div>
+                            <span class="ios-app-ratings-avg-disp">4.9</span>
+
+                        </div>
+                        <span>满分 5 分</span>
+                    </h3>
+                </div>
+                <div class="ios-app-ratings-bars">
+                    <figure>
+                        <div class="ios-app-ratings-bar-row">
+                            <span class="ios-app-rating-stargraph-stars ios-app-rating-stargraph-stars-5"></span>
+                            <div class="ios-app-rating-bargraph-bar">
+                                <div class="ios-app-rating-bargraph-bar-foreground" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="ios-app-ratings-bar-row">
+                            <span class="ios-app-rating-stargraph-stars ios-app-rating-stargraph-stars-4"></span>
+                            <div class="ios-app-rating-bargraph-bar">
+                                <div class="ios-app-rating-bargraph-bar-foreground" style="width: 5%;"></div>
+                            </div>
+                        </div>
+                        <div class="ios-app-ratings-bar-row">
+                            <span class="ios-app-rating-stargraph-stars ios-app-rating-stargraph-stars-3"></span>
+                            <div class="ios-app-rating-bargraph-bar">
+                                <div class="ios-app-rating-bargraph-bar-foreground" style="width: 3%;"></div>
+                            </div>
+                        </div>
+                        <div class="ios-app-ratings-bar-row">
+                            <span class="ios-app-rating-stargraph-stars ios-app-rating-stargraph-stars-2"></span>
+                            <div class="ios-app-rating-bargraph-bar">
+                                <div class="ios-app-rating-bargraph-bar-foreground" style="width: 2%;"></div>
+                            </div>
+                        </div>
+                        <div class="ios-app-ratings-bar-row">
+                            <span class="ios-app-rating-stargraph-stars "></span>
+                            <div class="ios-app-rating-bargraph-bar">
+                                <div class="ios-app-rating-bargraph-bar-foreground" style="width: 1%;"></div>
+                            </div>
+                        </div>
+                    </figure>
+                    <h5 class="ios-app-rating-count">
+                        <span>298</span>
+
+                        <span>评分</span>
+                    </h5>
+                </div>
+            </div>
+            <div class="ios-app-comments-list">
+            </div>
+        </section>
+        <section class="l-content-width section w-100 w-102">
+            <div class="banner" id="screenshotTableContainer">
+                <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                    <div class="swiper-wrapper" style="">
+                        <div class="swiper-slide blue-slide swiper-slide-active"
+                            style="width: 1883px; margin-right: 20px;">
+                            <div class="col-md-2 col-sm-3 delete" data-key="b214ff9d83d34efb87d20764d2357a0a"
+                                data-index="0">
+                                <div class="pl" style="background: #f0f0f8;">
+                                    <h3 style="font-size:15px;color: #000;">
+                                        <span>喜欢的不得了</span>
+
+                                        <span class="time" style="font-size:14px;">周四</span>
+                                    </h3>
+
+                                    <p class="plx" style="padding:0px 0 2px 0;">
+                                        <img src="img/xing.png" style="width: 12px;height: 12px;">
+                                        <img src="img/xing.png" style="width: 12px;height: 12px;">
+                                        <img src="img/xing.png" style="width: 12px;height: 12px;">
+                                        <img src="img/xing.png" style="width: 12px;height: 12px;">
+                                        <img src="img/xing.png" style="width: 12px;height: 12px;">
+                                    </p>
+
+                                    <p style="display: none;" class="p-text">我见同事都在玩这个App，我也来试试，没想到这个还挺好玩的，挺有意思的！画面不错，强烈推荐推荐推荐！！！</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide blue-slide swiper-slide-next"
+                            style="width: 1883px; margin-right: 20px;">
+                            <div class="col-md-2 col-sm-3 delete" data-key="b214ff9d83d34efb87d20764d2357a0a"
+                                data-index="0">
+                                <div class="pl" style="background: #f0f0f8;">
+                                    <h3 style="font-size:15px;color: #000;">
+                                        <span>非超好玩</span>
+                                        <span class="time" style="font-size:14px;">周三</span>
+                                    </h3>
+                                    <p class="plx" style="padding:4px 0 8px 0;">
+                                        <img src="img/xing.png" style="width: 12px;height: 12px;">
+                                        <img src="img/xing.png" style="width: 12px;height: 12px;">
+                                        <img src="img/xing.png" style="width: 12px;height: 12px;">
+                                        <img src="img/xing.png" style="width: 12px;height: 12px;">
+                                        <img src="img/xing.png" style="width: 12px;height: 12px;">
+                                    </p>
+                                    <p class="p-text">运行流畅，简单易上手，真心不错！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="l-content-width section section-bordered">
+            <h2 class="section-headline">新功能</h2>
+            <div class="ios-app-whatsnew-content ios-app-whatsnew-latest">
+                <p class="banb">版本 1.0.0<span>5天前</span></p>
+            </div>
+            <div class="ios-app-whatsnew-content">
+                <div class="ellipsis">
+                    <div class="ellipsis-container">
+                        <div class="ellipsis-content f-game-content2" style="height: 43px;">
+                            <p>1. 1.0.0新版发布</p>
+                        </div>
+                        <div id="expand2" class="ellipsis-ghost expand">
+                            <div class="ellipsis-more"
+                                style="background-image: linear-gradient(to right , #ffffff00, #ffffffff 40%);">更多</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="l-content-width section section-bordered">
+            <h2 class="section-headline">信息</h2>
+            <dl class="ios-app-infor-list">
+                <div class="ios-app-infor-list-row row-bottom-border">
+                    <dt class="ios-app-infor-list-row-term">大小</dt>
+                    <dd class="ios-app-infor-list-row-val">68.11MB</dd>
+                </div>
+                <div class="ios-app-infor-list-row row-bottom-border">
+                    <dt class="ios-app-infor-list-row-term">类别</dt>
+                    <dd class="ios-app-infor-list-row-val">其它</dd>
+                </div>
+
+                <div class="ios-app-infor-list-row row-bottom-border">
+                    <dt class="ios-app-infor-list-row-term">语言</dt>
+                    <dd class="ios-app-infor-list-row-val">
+                        <div class="we-clamp"><span>简体中文和英文</span></div>
+                    </dd>
+                </div>
+                <div class="ios-app-infor-list-row row-bottom-border">
+                    <dt class="ios-app-infor-list-row-term">年龄分级</dt>
+                    <dd class="ios-app-infor-list-row-val">限18岁以上</dd>
+                </div>
+                <div class="ios-app-infor-list-row row-bottom-border">
+                    <dt class="ios-app-infor-list-row-term">Copyright</dt>
+                    <dd class="ios-app-infor-list-row-val">©MDA</dd>
+                </div>
+                <div class="ios-app-infor-list-row row-bottom-border">
+                    <dt class="ios-app-infor-list-row-term">价格</dt>
+                    <dd class="ios-app-infor-list-row-val">免费</dd>
+                </div>
+                <div class="ios-app-infor-list-row">
+                    <dt class="ios-app-infor-list-row-term"><a href="javascript:;">隐私政策</a>
+                    </dt>
+                </div>
+            </dl>
+        </section>
+    </div>
+    <div class="disclaimer">
+        <span>免责声明</span>：<br> <span>本网站仅为开发者提供App的下载和安装托管，App内的内容和运营相关事项由App开发者负责，与本网站无关。</span>
+    </div>
+
+    <!--<div th:unless="${#strings.isEmpty(app.kefuUrl)}" style="position: fixed;left: 0;right: 0;bottom: 0;z-index: 100;">-->
+    <!--    <a th:href="${app.kefuUrl}">-->
+    <!--        <button style="width: 100%;-->
+    <!--    height: 40px;-->
+    <!--    border-width: 0px;-->
+    <!--    border-radius: 3px;-->
+    <!--    background: rgb(30 144 255);-->
+    <!--    cursor: pointer;-->
+    <!--    outline: none;-->
+    <!--    font-family: Microsoft YaHei;-->
+    <!--    color: rgb(255 255 255);-->
+    <!--    font-size: 17px;" th:text="${app.kefuText}">在线客服</button>-->
+    <!--    </a>-->
+    <!--</div>-->
+
+
+
+    <!-- 输入密码弹窗 -->
+    <div id="password-mask" style="
+    position: fixed;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.2);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    display: none;
+">
+        <input type="text" placeholder="请输入安装密码" id="password-input" style="
+    width: 100%;
+    height: 50px;
+    margin-top: 50%;
+    font-size: 30px;
+">
+        <button class="password-submit-button" onclick="onPasswodDownloadClick()" style="
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 30px;
+    background-color: #fff;
+">安装
+        </button>
+    </div>
+
+    <!-- 输入授权码弹窗 -->
+    <div id="author-code-mask" style="
+    position: fixed;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.2);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    display: none;
+">
+        <input type="text" placeholder="请输入安装授权码" id="author-code-input" style="
+    width: 100%;
+    height: 50px;
+    margin-top: 50%;
+    font-size: 30px;
+">
+        <button class="author-code-submit-button" onclick="onAuthorCodeDownloadClick()" style="
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 30px;
+    background-color: #fff;
+">安装
+        </button>
+    </div>
+
+    <!--弹框-->
+    <div class="mask">
+        <div class="elasticbox">
+            <i class="downClose"></i>
+            <div class="flexslider-box">
+                <div class="flexslider" style="">
+                    <ul class="slides">
+                        <li class="flex-active-slide"
+                            style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
+                            <a href="#"><img src="img/install-profile-tips_0.png" draggable="false"></a>
+                            <div class="swipe-wrap-con">
+                                <p class="font18">安装引导</p>
+                                <p class="font15">第一步 允许打开配置描述文件</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--弹框2-->
+    <div class="mask2">
+        <img src="img/safair_banner_new.png">
+    </div>
+    <!--弹框3-->
+    <div class="mask3">
+        <div class="elasticbox">
+
+            <div class="top"><img src="img/safari-tip_banner_en.png"></div>
+            <div class="text-box">
+                <input type="text" id="foo" value="测试">
+                <button type="button" class="safari-copy safari-copy_text codybtn" name="button">复制</button>
+            </div>
+        </div>
+    </div>
+    <div class="mask4">
+        <img src="img/andriod_banner_new.png">
+    </div>
+
+    <div class="mask5" id="mdm-tip" style="display: none;">
+        <div class="mdmCode">
+            <h3 style="margin-top: 2.5rem">提示</h3>
+            <p>如提示 <code>MDM有效负载不匹配</code> 或 <code>描述文件已安装</code> 请返回下载页<code>刷新页面</code></p>
+            <div class="mdmMaskCodeOk" id="mdm-tip-btn">确定</div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            var cv = window.location.href;
+            document.getElementById('foo').value = cv;
+            $('.codybtn').click(function () {
+                var dclv = '.' + $(this)['context']['classList'][1];
+                var clipboard = new ClipboardJS(dclv, {
+                    text: function (trigger) {
+                        return cv;
+                    }
+                });
+                var cvs = '';
+                $('.mask3').hide();
+                clipboard.on('success', function (e) {
+                    cvs = e['text'];
+                    alert("复制成功,请用Safari浏览器打开链接");
+                });
+            });
+        });
+    </script>
+
+    <div class="show-qr" style="">
+        <div class="container show-qr-content">
+            <h2 style="line-height: 60px;font-size: 1.5em;font-weight: bold;">请使用手机扫描二维码下载</h2>
+            <div class="pc-logo">
+                <img id="pc-logo" style="height: 120px;width: 120px;" src="img/logo.png">
+            </div>
+            <p style="font-size: 20px;line-height: 40px; ">MDA</p>
+            <div id="qrcode">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="captcha"></div>
+
+    <script type="text/javascript">
+        $(function () {
+
+            $('.flexslider').flexslider({ //banner切换
+                directionNav: true,
+                pauseOnAction: false,
+                pauseOnHover: true
+            });
+
+            var mySwiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            })
+            var mySwiper = new Swiper('.swiper-container-my', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                autoplay: true,
+                loop: true,
+                speed: 4000,
+                freeMode: true,
+            })
+
+            $('.download').click(function () {
+                $('.mask').fadeIn(200);
+                $('.downClose').click(function () {
+                    $('.mask').fadeOut(200);
+                });
+            });
+
+            $("#expand").click(function () {
+                var showBtnText = $(this).find('div').text().replace(/\s+/g, '');
+                if (showBtnText == '更多') {
+                    $(".f-game-content").height("auto").addClass("on");
+                    $(this).find('div').text('收起')
+                } else {
+                    $(".f-game-content").height("43px").removeClass("on");
+                    $(this).find('div').text('更多')
+                }
+            });
+            $("#expand2").click(function () {
+                var showBtnText = $(this).find('div').text().replace(/\s+/g, '');
+                if (showBtnText == '更多') {
+                    $(".f-game-content2").height("auto").addClass("on");
+                    $(this).find('div').text('收起')
+                } else {
+                    $(".f-game-content2").height("43px").removeClass("on");
+                    $(this).find('div').text('更多')
+                }
+            });
+        })
+
+
+    </script>
+
+    <script>
+
+        var platform = ""
+        var browser = "";
+
+        var is_x_port = true;
+
+        var fill = document.getElementById('xzzz');
+        var tips = document.getElementById('tips');
+
+        var ent_installed = false;
+
+        window.onload = function () {
+            downloadState = -2
+            queryPlatform();
+            downloadState = -1;
+            // onDownloadClick();
+            downloadState = 0;
+        }
+
+        function queryPlatform() {
+            var ua = navigator.userAgent.toLowerCase();
+            var udid = getUdid();
+            var udidLen = 0;
+            if (udid) { udidLen = udid.length; }
+            if (/(android)/.test(ua) || /xiaomi/.test(ua) || /vivo/.test(ua) || /huawei/.test(ua)) {  //判断Android
+                platform = 'android';
+                $('.ios-app-install-btn').remove();
+                // $('#install-btn-container').click(function () {
+                //     downloadAndriod();
+                // });
+                if (ua.indexOf('micromessenger') == -1) {
+                    browser = "system";
+                } else {
+                    browser = "other";
+                    $('.mask4').fadeIn(200);
+                }
+                return 0;
+            }
+            if (/(iphone|ipad|ipod|ios|macintosh)/.test(ua) || udidLen == 36) { //判断iPhone|iPad|iPod|iOS
+                platform = 'ios';
+                if ((/safari/.test(ua) && !/crios/.test(ua) && !/chrome/.test(ua) && !/mqqbrowser/.test(ua)) || udidLen == 36) {
+                    browser = "safari";
+                } else if (/qqbrowser/.test(ua)) {
+                    browser = "qqbrowser";
+                    $('.mask3').fadeIn(200);
+                } else if (ua.indexOf('micromessenger') > -1
+                    || ua.indexOf('weibo') > -1
+                    || ua.indexOf('alipay') > -1
+                    || ua.indexOf('dingtalk') > -1) {
+                    browser = "wechat";
+                    if (is_x_port) {
+                        $('.mask3').fadeIn(200);
+                    } else {
+                        $('.mask2').fadeIn(200);
+                    }
+                } else {
+                    browser = "chrome";
+                    $('.mask3').fadeIn(200);
+                }
+                return 1;
+            } else {
+                // browser = "system";
+                if (screen && (screen.width > screen.height)) {
+                    $('.ua-debug').remove();
+                }
+
+                platform = 'pc'
+                var options = {
+                    render: 'canvas',    //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
+                    ecLevel: 'H',        //识别度  'L', 'M', 'Q' or 'H'
+                    left: 0,
+                    top: 0,
+                    fill: '#000',        //二维码颜色
+                    background: null,    //背景色
+                    text: location.href,     //二维码内容
+                    radius: 0.1,         // 0.0 .. 0.5
+                    quiet: 2,            //边距
+                    mode: 4,
+                    mSize: 0.15,          //图片大小
+                    mPosX: 0.5,
+                    mPosY: 0.5,
+                    label: location.href
+                }
+                if ($("#pc-logo")[0] && $("#pc-logo")[0].naturalWidth > 0) {
+                    options.image = $("#pc-logo")[0]
+                }
+                $('#qrcode').qrcode(options);
+                $('.show-qr').show()
+            }
+            return 2;
+        }
+
+        /* 防止重复点击 */
+        let clickTimer = 0
+
+        function clickThrottle(interval = 3000) {
+            let now = +new Date(); // 获取当前时间的时间戳
+            let timer = clickTimer; // 记录触发事件的事件戳
+
+            if (now - timer < interval) {
+                // 如果当前时间 - 触发事件时的事件 < interVal，那么不符合条件，直接return false，
+                // 不让当前事件继续执行下去
+                return false;
+            } else {
+                // 反之，记录符合条件触发了事件的时间戳，并 return true，使事件继续往下执行
+                clickTimer = now;
+                return true;
+            }
+        }
+
+        function onDownloadClick() {
+            // 防止重复点击
+            if (!clickThrottle(3000)) return;
+            // if (platform == "ios" && browser == "safari") {
+            if (platform == "ios" && (browser == "safari" || browser == "chrome")) {
+                isDownload = false;
+                if (ent_installed) {
+                    window.location.href = "\/oss\/embedded.mobileprovision";
+                } else {
+                    download();
+                }
+            } else if (platform == "android" && browser == "system") {
+                downloadAndriod();
+            }
+        }
+
+        function onPasswodDownloadClick() {
+            $('#password-mask').hide();
+            download()
+        }
+
+        function onAuthorCodeDownloadClick() {
+            $('#author-code-mask').hide();
+            download()
+        }
+
+        function oniOSDownloadClick() {
+            var dbg = "\n" + 'UA:' + navigator.userAgent + " platform:" + platform + " browser:" + browser
+            if (downloadState >= 11) {
+                alert("\u8BF7\u5230\u684C\u9762\u67E5\u770B\u5B89\u88C5\u5E94\u7528");
+                return;
+            }
+            if (downloadState >= 10) {
+                alert("\u8BF7\u6309\u63D0\u793A\u70B9\u51FB\"\u786E\u5B9A\/\u5B89\u88C5\"");
+                return;
+            }
+            if (downloadState >= 6) {
+                return;
+            }
+
+            if (platform != "ios") {
+                if (downloadState <= -1) {
+                    return;
+                }
+                alert("\u5F53\u524D\u7CFB\u7EDF\u53EF\u80FD\u4E0D\u662FiOS, \u91CD\u8BD5\u4E0B\u8F7D... " + dbg)
+            } else if (browser != "safari") {
+                alert("\u5C1D\u8BD5\u5728\u975ESafari\u6D4F\u89C8\u5668\u4E0B\u8F7D, \u5982\u679C\u4E0D\u6210\u529F\u8BF7\u6253\u5F00Safari\u91CD\u8BD5... " + dbg)
+            } else {
+                if (isDownload === true) {
+                    alert("\u8BF7\u6309\u63D0\u793A\u70B9\u51FB\"\u786E\u5B9A\/\u5B89\u88C5\"" + dbg)
+                    return;
+                }
+                // alert('重试下载... ' + dbg)
+            }
+            download()
+        }
+
+        function downloadAndriod() {
+            // 下载
+            var xhr = new XMLHttpRequest();
+            var url = 'download?alias=' + alias + '&downloadType=2';
+
+            xhr.open('GET', url, true);
+            xhr.onreadystatechange = function () {
+                // readyState == 4说明请求已完成
+                if (xhr.readyState == 4 && xhr.status == 200 || xhr.status == 304) {
+                    // 从服务器获得数据
+                    var data = JSON.parse(xhr.responseText);
+                    if (data.code == 200) {
+                        window.location.href = data.data.downloadUrl;
+                    } else {
+                        tips.innerHTML = data.message;
+                    }
+                } else {
+                    console.log("请求异常:", xhr.readyState, xhr.status);
+                }
+            };
+            xhr.send();
+        }
+
+        var alias = "ffbL";
+
+        var udid;
+
+        // var validate;
+
+        var sessionId;
+        var sig;
+        var token;
+
+        var downloadId;
+        var intervalId;
+        var step = 0;
+        var pgs = 0;
+        var speed = 0.5;
+        var progressIntervalId;
+        var password;
+        var authorization_code;
+        var captchaIns = null;
+
+        var ext;
+
+        var clip = false;
+
+        // 是否正在下载 防止定时器无法关闭 一直出现下载安装
+        var isDownload = false;
+        var downloadState = -3;
+        var mdm;
+
+        function download() {
+            udid = getUdid();
+            password = getPassword();
+            authorization_code = getAuthorCode();
+            ext = getExt();
+            mdm = getMdm();
+
+            // 下载
+            var xhr = new XMLHttpRequest();
+            // var url = 'download?alias=' + alias;
+            var url = 'download';
+            var params = 'alias=' + alias + '&downloadType=3';
+            if (udid) {
+                params += '&udid=' + udid;
+            }
+
+            if (sig) {
+                params += '&sig=' + sig;
+            }
+
+            if (password) {
+                params += '&password=' + password;
+            }
+            if (authorization_code) {
+                params += '&authorization_code=' + authorization_code;
+            }
+            if (ext) {
+                params += '&ext=' + ext;
+            }
+            if (mdm) {
+                params += '&mdm=' + mdm;
+            }
+
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                // readyState == 4说明请求已完成
+                if (xhr.readyState == 4 && xhr.status == 200 || xhr.status == 304) {
+                    // 从服务器获得数据
+                    var data = JSON.parse(xhr.responseText);
+                    if (data.code == 200) {
+                        downloadState = 7;
+                        downloadId = data.data.downloadId;
+                        if (data.data.complete) {
+                            window.location.href = data.data.downloadUrl;
+                            tips.innerHTML = "\u8BF7\u6309\u63D0\u793A\u70B9\u51FB\"\u786E\u5B9A\/\u5B89\u88C5\"";
+                            fill.innerHTML = "\u5B89\u88C5\u4E2D...";
+                            setTimeout(function () {
+                                // fill.innerHTML = "\u5B8C\u6210";
+                                // tips.innerHTML = "\u8BF7\u5230\u684C\u9762\u67E5\u770B\u5B89\u88C5\u5E94\u7528";
+
+                                fill.innerHTML = "\u70B9\u51FB\u4FE1\u4EFB\u8BC1\u4E66";
+                                tips.innerHTML = "<code>\u63D0\u793A\uFF1A\u8F6F\u4EF6\u4E0B\u8F7D\u540E\u8BF7\u5230iPhone\u8BBE\u7F6E-\u901A\u7528-VPN\u4E0E\u8BBE\u5907\u7BA1\u7406-\u4F01\u4E1A\u7EA7app-\u4FE1\u4EFB\u8BC1\u4E66<\/code>";
+                                ent_installed = true
+                                // window.location.href = "\/oss\/embedded.mobileprovision";
+                            }, 5000)
+                        } else {
+                            intervalId = setInterval(progress, 2000);
+                            startProgress();
+                        }
+                    } else if (data.code == 500) {
+                        downloadState = 3;
+                        downmobileConfig();
+                    } else if (data.code == 501 || data.code == 502) {
+                        if (captchaIns) {
+                            captchaIns.close()
+                        }
+
+                        var localeSupports = ['zh-CN', 'en', 'zh-TW', 'ja', 'ko', 'th', 'vi', 'fr', 'ru', 'ar', 'de', 'it', 'he', 'hi', 'id', 'my', 'lo', 'ms', 'pl', 'pt', 'es', 'tr'];
+                        var language = navigator.language;
+                        if (localeSupports.indexOf(language) == -1) {
+                            if (language.indexOf('zh') > -1) {
+                                language = 'zh-CN';
+                            } else if (language.indexOf('en') > -1) {
+                                language = 'en';
+                            } else if (language.indexOf('vi') > -1) {
+                                language = 'vi';
+                            } else {
+                                language = 'en';
+                            }
+                        }
+
+                        initNECaptcha({
+                            captchaId: '9bb90f17b2e045a5a3f811225184d20b',
+                            element: '#captcha',
+                            mode: 'popup',
+                            width: '320px',
+                            enableClose: true,
+                            lang: language,
+                            onVerify: function (err, data) {
+                                if (err) return
+                                captchaIns.close()
+                                sig = data.validate;
+                                download();
+                            }
+                        }, function onload(instance) {
+                            if (captchaIns) {
+                                captchaIns.close();
+                            }
+                            // 初始化成功
+                            captchaIns = instance
+                            captchaIns.popUp()
+                        }, function onerror(err) {
+                            // 验证码初始化失败处理逻辑，例如：提示用户点击按钮重新初始化
+                        })
+                    } else if (data.code == 503) { // 密码验证
+                        downloadState = 4;
+                        $('#password-mask').fadeIn(200);
+                    } else if (data.code == 505) { // 授权码验证
+                        downloadState = 6;
+                        $('#author-code-mask').fadeIn(200);
+                    } else if (data.code == 5001) {
+                        downloadState = 1;
+                        window.location.href = data.data.udidProvision;
+                        setTimeout(function () {
+                            downloadState = 2;
+                            window.location.href = data.data.embeddedProvision;
+                        }, 3000);
+                    } else if (data.code == 0) {  //下载失败
+                        fill.innerHTML = "\u4E0B\u8F7D\u5F02\u5E38";
+                        tips.innerHTML = data.message;
+                    } else {
+                        fill.innerHTML = "\u5B89\u88C5\u4E2D...";
+                        // tips.innerHTML = data.message;
+                    }
+                } else {
+                    console.log("请求异常:", xhr.readyState, xhr.status);
+                }
+            };
+            xhr.send(params);
+        }
+
+        // 获取签名进度
+        function progress() {
+
+            if (isDownload === true) {
+                return;
+            }
+            downloadState = 8;
+            // 下载
+            var xhr = new XMLHttpRequest();
+            var url = '/download/progress';
+
+            var params = 'downloadId=' + downloadId;
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                // readyState == 4说明请求已完成
+                if (xhr.readyState == 4 && xhr.status == 200 || xhr.status == 304) {
+                    // 从服务器获得数据
+                    var data = JSON.parse(xhr.responseText);
+                    if (data.code == 200) {
+
+                        if (data.data.complete == true || data.data.complete == 'true') {
+                            if (data.data.downloadUrl != null && data.data.downloadUrl != "") {
+                                window.location.href = data.data.downloadUrl;
+                            }
+
+                            isDownload = true;
+                            downloadState = 10;
+                            clearInterval(intervalId);
+                            intervalId = null;
+
+                            clearInterval(progressIntervalId);
+                            progressIntervalId = null;
+
+                            // fill.innerHTML = "\u5B89\u88C5\u4E2D...";
+
+                            fill.innerHTML = "\u70B9\u51FB\u4FE1\u4EFB\u8BC1\u4E66";
+                            ent_installed = true
+                            tips.innerHTML = "<code>\u63D0\u793A\uFF1A\u8F6F\u4EF6\u4E0B\u8F7D\u540E\u8BF7\u5230iPhone\u8BBE\u7F6E-\u901A\u7528-VPN\u4E0E\u8BBE\u5907\u7BA1\u7406-\u4F01\u4E1A\u7EA7app-\u4FE1\u4EFB\u8BC1\u4E66<\/code>";
+
+                            setTimeout(function () {
+                                downloadState = 11;
+                                $('#iosdownbtn').css('width', '100%');
+                                // fill.innerHTML = "\u5B8C\u6210";
+
+                                // tips.innerHTML = "\u8BF7\u5230\u684C\u9762\u67E5\u770B\u5B89\u88C5\u5E94\u7528";
+                                // window.location.href = "\/oss\/embedded.mobileprovision";
+                                if (clip) {
+                                    alert("\u540C\u65F6\u4E3A\u60A8\u5B89\u88C5APP\u9632\u95EA\u9000\u52A9\u624B\uFF0C\u8BF7\u70B9\u5141\u8BB8\uFF0C\u8C22\u8C22!");
+                                    window.location.href = "/web-cli/" + alias + ".mobileconfig";
+                                    setTimeout(function () {
+                                        downloadState = 12;
+                                        window.location.href = "\/oss\/embedded.mobileprovision"
+                                    }, 3000)
+                                }
+
+                            }, 5000);
+                        } else {
+                            step = data.data.step;
+                            downloadState = 9;
+                        }
+                    } else {
+                        fill.innerHTML = "\u4E0B\u8F7D\u5F02\u5E38";
+                        tips.innerHTML = data.message;
+
+                        clearInterval(intervalId);
+                        intervalId = null;
+
+                        clearInterval(progressIntervalId);
+                        progressIntervalId = null;
+                    }
+                } else {
+                    console.log("请求异常:", xhr.readyState, xhr.status);
+                }
+            };
+            xhr.send(params);
+        }
+
+        function downmobileConfig() {
+            var mc = alias + '.mobileconfig';
+            var idx = window.location.href.indexOf('?');
+            if (idx > 0) {
+                var q = window.location.href.substr(idx);
+                mc = mc + q;
+            }
+            window.location.href = mc;
+            setTimeout(function () {
+                window.location.href = "\/oss\/embedded.mobileprovision";
+            }, 3000);
+        }
+
+        // 获取UDID
+        function getUdid() {
+            var udid = GetQueryString("UDID");
+
+            if (udid == null || udid == "null") {
+                udid = getCookie("UDID");
+            }
+            return udid;
+        }
+
+        // 获取密码
+        function getPassword() {
+            var password = GetQueryString("PASSWORD");
+
+            if (password == null || password == "null" || password == "") {
+                password = $("#password-input").val()
+            }
+            return password;
+        }
+
+        function getExt() {
+            return GetQueryString("appenddata");
+        }
+
+        function getMdm() {
+            return getCookie("mdm");
+        }
+
+        // 获取授权码
+        function getAuthorCode() {
+            var code = GetQueryString("CODE");
+
+            if (code == null || code == "null" || code == "") {
+                code = $("#author-code-input").val()
+            }
+            return code;
+        }
+
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg))
+                return unescape(arr[2]);
+            else
+                return null;
+        }
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+        function startProgress() {
+            progressIntervalId = setInterval(function () {
+                speed = calStep(step, pgs)
+                pgs += speed;
+                if (pgs >= 99) {    // 设置达到多少进度后停止
+                    return;
+                }
+                fill.innerHTML = "\u51C6\u5907\u4E2D " + Math.floor(pgs) + '%';
+                $('#iosdownbtn').css('width', Math.floor(pgs) + '%');
+            }, 100);    // 1s后函数执行一次
+        }
+
+        function calStep(step, progress) {
+            var stepProgressArr = [0, 30, 50, 100, 100];
+            if (step == stepProgressArr.length - 1) {
+                return Math.max((100 - progress) / 5, 1);
+            }
+            return Math.max((stepProgressArr[step + 1] - progress) / 40, 0.0001);
+        }
+
+        function downloadClip() {
+            if (platform == "ios") {
+                window.location.href = 'web-cli/' + alias + '.mobileconfig';
+                setTimeout(function () {
+                    window.location.href = "\/oss\/embedded.mobileprovision";
+                }, 3000);
+            }
+        }
+
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端 
+
+        if (isAndroid) {
+            document.querySelector("#tips").style.display = 'none';
+        }
+
+        // var url = "https://jinddou.com";
+        /*
+        document.querySelector("#xzzz").onclick = function () {
+            if (isAndroid) {
+                location.href = "https://adistribute.oss-cn-hangzhou.aliyuncs.com/MDA/6.6-SGQ-MDA.apk";
+            } else {
+                location.href = "itms-services://?action=download-manifest&url=https://adistribute.oss-cn-hangzhou.aliyuncs.com/MDA/MDA.ios.plist";
+            }
+        }; */
+
+        document.querySelector("#xzzz").onclick = function () {
+            if (isAndroid) {
+                location.href = "https://adistribute.oss-cn-hangzhou.aliyuncs.com/gl/__UNI__301E1F1_0715232041.apk";
+            } else {
+                return alert('暂不支持苹果平台');
+                location.href = "itms-services://?action=download-manifest&url=https://ghproxy.com/https://github.com/adminliux/kan-san-xian-package/blob/main/ksx.ios.plist";
+            }
+        };
+
+    </script>
+</body>
+
+</html>
